@@ -1,0 +1,15 @@
+# GSD installation scaffold (not needed in project GitHub repository)
+.agent/
+.agents/
+.gemini/
+adapters/
+scripts/
+
+GSD-STYLE.md
+PROJECT_RULES.md
+model_capabilities.yaml
+VERSION
+
+# Local environment
+.venv/
+.env
