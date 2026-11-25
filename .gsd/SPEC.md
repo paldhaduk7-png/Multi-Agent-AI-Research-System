@@ -11,9 +11,10 @@ An autonomous Multi-Agent AI Research System that conducts end-to-end web resear
 1. **Search & Extraction Pipeline** — Implement a Search Agent using the Tavily Search API and a Reader Agent using BeautifulSoup to discover and scrape relevant web sources.
 2. **Synthesis & Quality Auditing** — Implement a Writer Chain to generate structured research reports and a Critic Chain to review, critique, and score the research using LangChain with Google Gemini and Mistral AI models.
 3. **Modular API & Real-Time Streaming** — Expose a FastAPI backend providing REST endpoints for research task lifecycle management and Server-Sent Events (SSE) for streaming agent status, intermediate findings, and workflow progress.
-4. **Interactive React UI** — Deliver a modern React single-page application enabling query submission, visual agent timeline monitoring via SSE, and rich Markdown report visualization with critic scorecards.
+4. **Interactive Validation UI** — Provide a quick Streamlit interface for testing agent executions, reviewing generated reports, and inspecting critic scores interactively during development. (Full React SPA deferred to a later milestone).
 
 ## Non-Goals (Out of Scope for v1)
+- React frontend (deferred to v2; temporary testing UI using Streamlit if needed).
 - Autonomous iterative loop where Writer and Critic re-draft indefinitely (v1 uses a single review pass; architecture remains extensible for loops later).
 - Bi-directional WebSockets (v1 relies on REST + SSE; architecture remains modular for WebSockets if needed later).
 - Multi-tenant authentication, user billing, or persistent cloud database clusters (local / file-based / SQLite storage for v1).
@@ -36,8 +37,8 @@ An autonomous Multi-Agent AI Research System that conducts end-to-end web resear
 - [ ] Reader Agent scrapes web pages using BeautifulSoup, cleaning HTML into structured text.
 - [ ] Writer Chain generates a structured Markdown report citing retrieved sources using Gemini or Mistral.
 - [ ] Critic Chain evaluates the generated report and assigns an objective quality score with structured feedback.
-- [ ] Backend streams live agent activity events (Search -> Scrape -> Write -> Critic) to the frontend via SSE.
-- [ ] React UI displays live execution status, the final Markdown report, and the Critic review card.
+- [ ] Backend streams live agent activity events (Search -> Scrape -> Write -> Critic) via SSE or local callbacks.
+- [ ] Streamlit interface allows inputting research queries, viewing real-time agent output, and rendering the final report and critic score.
 
 ---
 

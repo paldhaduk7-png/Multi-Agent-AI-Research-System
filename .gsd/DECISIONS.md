@@ -40,3 +40,21 @@ Implement a single-pass review for v1 (Search -> Scrape -> Write -> Critic -> Ou
 
 ### Rationale
 Ensures predictable execution times and token costs for v1 while proving the end-to-end multi-agent pipeline.
+
+---
+
+## [DECISION-003] Defer React Frontend in Favor of Backend-First & Streamlit for Testing
+
+**Date**: 2026-11-25  
+**Status**: Accepted  
+
+### Context
+User decided to focus on building the Python backend and multi-agent pipeline first, deferring the full React frontend to later. For immediate visual testing during development, Streamlit will be used as a lightweight validation UI.
+
+### Decision
+1. Prioritize Phases 1 to 3 on the core backend and multi-agent pipeline (Search, Reader, Writer, Critic, FastAPI).
+2. Phase 4 provides an interactive Streamlit UI for immediate testing and report inspection.
+3. React SPA is postponed to a subsequent milestone (v2.0).
+
+### Rationale
+Enables fast iteration on agent quality and API design without getting slowed down by frontend build systems early on.

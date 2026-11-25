@@ -16,7 +16,7 @@ updated: 2026-11-25
 - [ ] Writer Chain generating structured Markdown reports via LangChain (Gemini / Mistral)
 - [ ] Critic Chain evaluating report quality with structured critique and score
 - [ ] FastAPI backend with REST endpoints and SSE real-time streaming
-- [ ] React frontend with live agent progress feed and markdown report display
+- [ ] Streamlit interface for interactive agent execution, testing, and report review (React deferred to v2)
 
 ---
 
@@ -57,15 +57,15 @@ updated: 2026-11-25
 
 ---
 
-### Phase 4: React Frontend & End-to-End Integration
+### Phase 4: Streamlit Interactive UI & End-to-End Validation
 **Status:** ⬜ Not Started  
-**Objective:** Develop the React SPA interface for topic submission, live agent progress monitoring, and final report visualization.  
+**Objective:** Build a Streamlit dashboard for interactive testing of the multi-agent system, live monitoring, and report inspection.  
 **Depends on:** Phase 3  
 **Requirements:** REQ-08, REQ-09, REQ-10, NFR-04  
 
 **Plans:**
-- [ ] Plan 4.1: React UI setup, search input, and SSE event streaming consumer
-- [ ] Plan 4.2: Markdown report viewer, Critic score dashboard, and end-to-end verification
+- [ ] Plan 4.1: Streamlit dashboard with research query input and live agent output display
+- [ ] Plan 4.2: Final report visualizer, Critic scorecard viewer, and end-to-end verification
 
 ---
 

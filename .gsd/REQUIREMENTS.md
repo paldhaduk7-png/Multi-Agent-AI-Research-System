@@ -21,9 +21,9 @@ Requirements derived from SPEC.md for traceability and coverage tracking.
 | REQ-05 | Critic Chain audits the report, generates qualitative critique, and computes a score | SPEC Goal 2 | 2 | Pending |
 | REQ-06 | FastAPI service provides REST endpoints to create, list, and read research tasks | SPEC Goal 3 | 3 | Pending |
 | REQ-07 | FastAPI exposes SSE endpoint streaming agent state changes, logs, and progress events | SPEC Goal 3 | 3 | Pending |
-| REQ-08 | React frontend provides input for research topics and selects model/options | SPEC Goal 4 | 4 | Pending |
-| REQ-09 | React UI listens to SSE to display a real-time progress timeline of active agents | SPEC Goal 4 | 4 | Pending |
-| REQ-10 | React UI renders the final research report in Markdown alongside the Critic score card | SPEC Goal 4 | 4 | Pending |
+| REQ-08 | Streamlit interface allows submitting research topics and configuring models | SPEC Goal 4 | 4 | Pending |
+| REQ-09 | Streamlit UI displays real-time agent progression and intermediate findings | SPEC Goal 4 | 4 | Pending |
+| REQ-10 | Streamlit UI renders final Markdown report alongside Critic scores & feedback | SPEC Goal 4 | 4 | Pending |
 
 ---
 
