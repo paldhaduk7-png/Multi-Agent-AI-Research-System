@@ -27,7 +27,7 @@ updated: 2026-11-25
   - `requirements.txt` with LangChain, Gemini, Mistral, Tavily, BeautifulSoup
   - `.env.example` and `.gitignore`
 
-- **Step 2: Custom Tools (`tools.py`)** (Pending ⬜)
+- **Step 2: Custom Tools (`tools.py`)** (Completed ✅)
   - `@tool web_search`: Tavily API integration returning live internet search results.
   - `@tool scrape_url`: BeautifulSoup web scraper extracting clean, readable text from target URLs.
 

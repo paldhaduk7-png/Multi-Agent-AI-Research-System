@@ -16,6 +16,7 @@
 
 ## Items
 
+- [ ] Review and apply pending user-requested updates to `tools.py` before starting Step 3 `high` — 2026-11-25
 - [ ] Add `.env.example` file with placeholder keys (`TAVILY_API_KEY`, `GEMINI_API_KEY`, `MISTRAL_API_KEY`) `high` — 2026-11-25
 - [ ] Explore future iterative revision loop if Critic score is below threshold `low` — 2026-11-25
 - [ ] Consider WebSockets for bidirectional agent steering if requested in later milestones `low` — 2026-11-25

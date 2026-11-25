@@ -13,3 +13,9 @@ VERSION
 # Local environment
 .venv/
 .env
+
+# Python cache & build
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
