@@ -6,20 +6,20 @@ updated: 2026-11-25
 
 ## Current Position
 
-**Milestone:** v1.0  
-**Phase:** 1 - Search & Extraction Pipeline  
-**Status:** planning  
-**Plan:** None (Ready for `/plan 1`)  
+**Milestone:** v1.0 Multi-Agent Pipeline  
+**Current Step:** Step 2 - Create `tools.py`  
+**Status:** planning (no code written yet)  
 
 ## Last Action
 
-Initialized GSD project with SPEC.md, REQUIREMENTS.md, ROADMAP.md, DECISIONS.md, and project memory files following deep questioning discovery.
+Completed Step 1 (Environment, Dependencies in `requirements.txt`, `.env.example`, `.gitignore`). Outlined Step 2 through Step 5 based on the provided project blueprint.
 
 ## Next Steps
 
-1. Run `/discuss-phase 1` (optional) to review Phase 1 scope.
-2. Run `/plan 1` to generate execution plans for Phase 1 (Search Agent & Reader Agent).
-3. Execute Phase 1 plans to implement Tavily search and BeautifulSoup extraction.
+1. Review and align on design for **Step 2 — `tools.py`**:
+   - `web_search`: `@tool` using Tavily API client
+   - `scrape_url`: `@tool` using BeautifulSoup and requests/httpx
+2. Await user confirmation before generating any code for `tools.py`.
 
 ## Active Decisions
 
