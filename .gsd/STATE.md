@@ -7,24 +7,27 @@ updated: 2026-11-25
 ## Current Position
 
 **Milestone:** v1.0 Multi-Agent Pipeline  
-**Current Step:** Step 3 - Create `agents.py`  
-**Status:** ready for planning / implementation  
+**Current Step:** Step 4 - Create `pipeline.py`  
+**Status:** ready for implementation  
 
 ## Last Action
 
-Completed and verified **Step 2 — `tools.py`**:
-- `@tool web_search`: Tested and verified live queries with Tavily API.
-- `@tool scrape_url`: Tested and verified HTML scraping and clean text extraction with BeautifulSoup.
-- All dependencies installed in `.venv`.
+Completed, verified, and committed **Step 3 — `agents.py`**:
+- Modernized agents using `create_agent(model=llm, tools=...)`.
+- `build_search_agent()` with `web_search` tool.
+- `build_reader_agent()` with `scrape_url` tool.
+- `writer_chain`: LCEL pipe (`writer_prompt | llm | StrOutputParser()`).
+- `critic_chain`: LCEL pipe (`critic_prompt | llm | StrOutputParser()`).
+- Added automatic fallback to Mistral AI if Gemini token limit or quota is exhausted via `gemini_llm.with_fallbacks([mistral_llm])`.
 
 ## Next Steps
 
-1. Apply pending updates to `tools.py` as requested by user before Step 3.
-2. Review and implement **Step 3 — `agents.py`**:
-   - `Search Agent`: `create_react_agent` + `AgentExecutor` with `web_search` tool.
-   - `Reader Agent`: `create_react_agent` + `AgentExecutor` with `scrape_url` tool.
-   - `Writer Chain`: LCEL pipe (`prompt | llm | StrOutputParser()`) for report synthesis.
-   - `Critic Chain`: LCEL pipe (`prompt | llm | StrOutputParser()`) for report review, scoring, and feedback.
+1. Implement **Step 4 — `pipeline.py`**:
+   - Write supervisor orchestrator function `run_research_pipeline(topic)`
+   - Manage shared state dictionary across all 4 agents/chains
+   - Format rich terminal outputs for each stage
+2. Implement **Step 5 — Run and Test**:
+   - Interactive CLI runner with user topic input and full execution trace.
 
 ## Active Decisions
 

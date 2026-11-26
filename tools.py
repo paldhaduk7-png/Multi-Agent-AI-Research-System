@@ -47,8 +47,8 @@ def web_search(query: str) -> str:
 @tool
 def scrape_url(url: str) -> str:
     """Scrapes a webpage URL and extracts clean readable text using BeautifulSoup."""
+
     if not url or not url.startswith(("http://", "https://")):
-        print(f"[bold red]✖ [Tools:scrape_url][/bold red] Invalid URL provided: {url}")
         return f"Error: Invalid URL '{url}'. URL must begin with http:// or https://."
 
     print(f"[bold cyan]🌐 [Tools:scrape_url][/bold cyan] Scraping webpage: [yellow]{url}[/yellow]")
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     print("[bold magenta]Testing tools directly with rich output...[/bold magenta]")
     
     # Test 1: scrape_url
-    sample_content = scrape_url.invoke({"url": "https://www.paldhaduk.in"})
+    sample_content = scrape_url.invoke({"url": "https://www.wikipedia.org"})
     print(f"\n[dim]{sample_content}[/dim]\n")
 
     # Test 2: web_search

@@ -31,7 +31,7 @@ updated: 2026-11-25
   - `@tool web_search`: Tavily API integration returning live internet search results.
   - `@tool scrape_url`: BeautifulSoup web scraper extracting clean, readable text from target URLs.
 
-- **Step 3: Multi-Agent & Chains System (`agents.py`)** (Pending ⬜)
+- **Step 3: Multi-Agent & Chains System (`agents.py`)** (Completed ✅)
   - `Search Agent`: `create_react_agent` + `AgentExecutor` with `web_search` tool.
   - `Reader Agent`: `create_react_agent` + `AgentExecutor` with `scrape_url` tool.
   - `Writer Chain`: LCEL pipe (`prompt | llm | StrOutputParser()`) synthesizing structured research report.
