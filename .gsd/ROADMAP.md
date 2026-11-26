@@ -37,12 +37,12 @@ updated: 2026-11-25
   - `Writer Chain`: LCEL pipe (`prompt | llm | StrOutputParser()`) synthesizing structured research report.
   - `Critic Chain`: LCEL pipe (`prompt | llm | StrOutputParser()`) auditing report with score and actionable feedback.
 
-- **Step 4: Orchestration Pipeline (`pipeline.py`)** (Pending ⬜)
+- **Step 4: Orchestration Pipeline (`pipeline.py`)** (Completed ✅)
   - Supervisor function `run_research_pipeline(topic)`
   - Shared state dictionary passing data across Search → Reader → Writer → Critic.
   - Step-by-step terminal logging of each agent's execution.
 
-- **Step 5: Run & Verification** (Pending ⬜)
+- **Step 5: Run & Verification** (In Progress 🔄)
   - Interactive terminal execution: `python pipeline.py`
   - End-to-end verification of search, read, write, and review workflow.
 

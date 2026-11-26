@@ -7,27 +7,23 @@ updated: 2026-11-25
 ## Current Position
 
 **Milestone:** v1.0 Multi-Agent Pipeline  
-**Current Step:** Step 4 - Create `pipeline.py`  
-**Status:** ready for implementation  
+**Current Step:** Step 5 - Run and Test `pipeline.py`  
+**Status:** implementation complete, ready for interactive testing  
 
 ## Last Action
 
-Completed, verified, and committed **Step 3 — `agents.py`**:
-- Modernized agents using `create_agent(model=llm, tools=...)`.
-- `build_search_agent()` with `web_search` tool.
-- `build_reader_agent()` with `scrape_url` tool.
-- `writer_chain`: LCEL pipe (`writer_prompt | llm | StrOutputParser()`).
-- `critic_chain`: LCEL pipe (`critic_prompt | llm | StrOutputParser()`).
-- Added automatic fallback to Mistral AI if Gemini token limit or quota is exhausted via `gemini_llm.with_fallbacks([mistral_llm])`.
+Completed, verified, and committed **Step 4 — `pipeline.py`**:
+- Implemented supervisor function `run_research_pipeline(topic)` matching curriculum design.
+- Step 1: Search Agent queries Tavily and populates `state['search_results']`.
+- Step 2: Reader Agent scrapes deep content from top URL into `state['scraped_content']`.
+- Step 3: Writer Chain synthesizes structured markdown report into `state['report']`.
+- Step 4: Critic Chain evaluates report quality and stores feedback into `state['feedback']`.
 
 ## Next Steps
 
-1. Implement **Step 4 — `pipeline.py`**:
-   - Write supervisor orchestrator function `run_research_pipeline(topic)`
-   - Manage shared state dictionary across all 4 agents/chains
-   - Format rich terminal outputs for each stage
-2. Implement **Step 5 — Run and Test**:
-   - Interactive CLI runner with user topic input and full execution trace.
+1. Run and verify end-to-end execution: `python pipeline.py`
+2. Validate agent transitions and terminal outputs.
+3. Await user review and instructions.
 
 ## Active Decisions
 
