@@ -77,8 +77,8 @@ def scrape_url(url: str) -> str:
         lines = [line.strip() for line in text.splitlines()]
         clean_text = "\n".join(line for line in lines if line)
 
-        # Truncate content (~4,000 chars) to prevent context window overflow
-        max_chars = 4000
+        # Truncate content (~2,500 chars) to prevent context window overflow and keep pipeline fast
+        max_chars = 2500
         if len(clean_text) > max_chars:
             clean_text = clean_text[:max_chars] + "\n\n[Content truncated for length...]"
 
