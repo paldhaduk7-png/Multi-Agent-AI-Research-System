@@ -1,4 +1,4 @@
-from agents import build_reader_agent, build_search_agent, writer_chain, critic_chain
+from agents import build_reader_agent, build_search_agent, invoke_writer, invoke_critic
 
 
 def _extract_content(message_content) -> str:
@@ -66,10 +66,8 @@ def run_research_pipeline(topic: str) -> dict:
         f"DETAILED SCRAPED CONTENT : \n {state['scraped_content']}"
     )
 
-    state["report"] = writer_chain.invoke({
-        "topic": topic,
-        "research": research_combined,
-    })
+    # invoke_writer uses _safe_llm_call: auto-fallback to Mistral on quota errors
+    state["report"] = invoke_writer(topic, research_combined)
 
     print("\n Final Report:\n", state["report"])
 
@@ -80,9 +78,8 @@ def run_research_pipeline(topic: str) -> dict:
     print("step 4 - critic is reviewing the report ")
     print("=" * 50)
 
-    state["feedback"] = critic_chain.invoke({
-        "report": state["report"]
-    })
+    # invoke_critic uses _safe_llm_call: auto-fallback to Mistral on quota errors
+    state["feedback"] = invoke_critic(state["report"])
 
     print("\n critic report:\n", state["feedback"])
 
